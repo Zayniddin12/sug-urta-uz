@@ -1,0 +1,17 @@
+.transition-200 {
+    transition: all ease-in-out 0.2s;
+}
+
+.transition-300 {
+    transition: all ease-in-out 0.3s;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.2s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}

@@ -1,0 +1,184 @@
+@import "assets/fonts/font/stylesheet.css";
+
+
+/*main > * {*/
+/*    overflow:hidden;*/
+/*}*/
+html{
+    scroll-padding-top: 20px;
+}
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family:"TT Interfaces", sans-serif;
+    font-variant-numeric: lining-nums proportional-nums !important;
+    font-feature-settings: "liga" off !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden !important;
+}
+body{
+    background: #F1F5F9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "TT Interfaces", sans-serif;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-y-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.absolute-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+}
+
+.absolute-y-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.absolute-x-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+* {
+    font-family: "TT Interfaces", sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 34px;
+    width: 100%;
+    max-width: 640px !important;
+}
+
+@media screen and (max-width: 420px) {
+    .container {
+        padding:0 16px
+    }
+}
+.gray-shimmer {
+    background: rgb(255 255 255 / 0.1);
+    background-image: linear-gradient(
+            to right,
+            rgb(255 255 255 / 0.1),
+            rgb(255 255 255/0.2),
+            rgb(255 255 255/0.4)
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    position: relative;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeholderGrayShimmer;
+    animation-timing-function: linear;
+}
+.shimmer {
+    background-color: #edeef1 !important;
+    background-image: linear-gradient(
+            to right,
+            #f6f7f8 0%,
+            #edeef1 20%,
+            #f6f7f8 40%,
+            #f6f7f8 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    position: relative;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    animation-name: placeholderShimmer;
+    animation-timing-function: ease;
+}
+/* src/assets/tailwind.css yoki main.css */
+.button-border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 1px; /* gradient qalinligi */
+    background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
+    -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes placeholderGrayShimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+@keyframes placeholderShimmer {
+    0% {
+        background-position: -400px 0;
+    }
+    100% {
+        background-position: 400px 0;
+    }
+}
+.image-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-loading:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f6f7f8;
+    background-image: linear-gradient(
+            to right,
+            #f6f7f8 0%,
+            #edeef1 20%,
+            #f6f7f8 40%,
+            #f6f7f8 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeholderShimmer;
+    animation-timing-function: linear;
+}
+
+.fade-enter-active {
+    animation: fade 0.3s ease-in-out;
+}
+
+
+
